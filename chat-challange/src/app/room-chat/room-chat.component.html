@@ -1,0 +1,17 @@
+<div class="border">
+  <label>Sala de Chat</label>
+  <div class="border">
+    <label style="font-weight: bold;">Conversación</label>
+    <div *ngFor="let message of messages">
+      <p><label style="font-weight: bold;font-style: italic;">{{message.user}}:</label> {{message.text}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <app-message [user]="'Pepe'" (sendMessage)="newMessage($event)"></app-message>
+    </div>
+    <div class="col-md-6">
+      <app-message [user]="'María'" (sendMessage)="newMessage($event)"></app-message>
+    </div>
+  </div>
+</div>
